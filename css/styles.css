@@ -91,6 +91,8 @@ p {
   line-height: 1.1429;
   letter-spacing: 0.02em;
   padding: 32px 0px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav .link.current {
@@ -123,12 +125,17 @@ p {
 .contacts .link {
   display: flex;
   align-items: center;
+
   color: var(--primary-text-color);
   font-weight: 500;
   line-height: 1.1429;
   letter-spacing: 0.02em;
+
   min-width: 122px;
   padding: 32px 0px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 .contacts .link:hover,
 .contacts .link:focus {
@@ -171,6 +178,7 @@ p {
   align-items: center;
   text-align: center;
   letter-spacing: 0.06em;
+  
 }
 .bg-hero {
   height: 600px;
@@ -230,7 +238,23 @@ p {
   background: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
+/* Кнопка */
+.button {
+  color: var(--primary-white-color);
+  background-color: var(--pasiv-button-color);
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 32px;
+  border-radius: 4px;
+  min-width: 216px;
+  border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
+.button:hover,
+.button:focus {
+  background-color: var(--active-button-color);
+}
 
 /* Секції */
 .section {
@@ -372,6 +396,11 @@ img {
   border: none;
   color: var(--color-icon);
   background-color: var(--primary-white-color);
+    border-radius: 50%;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+                    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 
 .comand-icon {
@@ -384,7 +413,7 @@ img {
 .button-icon:focus {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
-  border-radius: 50%;
+
 }
 /* Клієнти */
 .container .client {
@@ -401,6 +430,10 @@ img {
   border: 1px solid var(--color-icon);
   border-radius: 4px;
   color: var(--color-icon);
+  cursor: pointer;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-link .client-icon {
   fill: currentColor;
@@ -408,7 +441,7 @@ img {
 .client .client-link:hover {
   color: var(--accent-color);
   border-color: var(--accent-color);
-  cursor: pointer;
+ 
 }
 /* футер */
 .footer {
@@ -427,13 +460,13 @@ img {
 .margin-logo {
   margin-bottom: 20px;
 }
-/* .contact{
 
-} */
 .contact .addres {
   color: var(--primary-white-color);
   font-style: normal;
   line-height: 1.7143;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .contact .addres:hover,
 .contact .addres:focus {
@@ -443,6 +476,8 @@ img {
   color: var(--footer-contacts-color);
   line-height: 1.7142;
   font-style: normal;
+
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact .item:not(:last-child) {
@@ -495,6 +530,9 @@ img {
   color: var(--primary-white-color);
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-link-icon .comand-icon {
@@ -507,22 +545,6 @@ img {
 .footer-link-icon:focus {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
-  border-radius: 50%;
-}
-/* Кнопка */
-.button {
-  color: var(--primary-white-color);
-  background-color: var(--pasiv-button-color);
-  cursor: pointer;
-  display: inline-block;
-  padding: 10px 32px;
-  border-radius: 4px;
-  min-width: 216px;
-  border: none;
-}
-.button:hover,
-.button:focus {
-  background-color: var(--active-button-color);
 }
 
 /* ПОРТФОЛІО */
@@ -551,6 +573,12 @@ img {
   border-radius: 4px;
   min-width: 73px;
   border: 2px solid transparent;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  
 }
 .filter .filter-button:hover,
 .filter .filter-button:focus {
@@ -571,8 +599,9 @@ img {
 
 .work-img {
   position: relative;
+  overflow: hidden;
 }
-.work-img::before {
+/* .work-img::before {
   display: inline-block;
   content: "";
   border: none;
@@ -583,18 +612,37 @@ img {
   bottom: 0;
   left: 0;
   opacity: 0;
-}
+
+    transform: translateY(100%);
+    overflow: hidden;
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+} */
 .text-box {
+position: absolute;
+top: 0%;
+left: 0%;
+  display: flex;
+
   font-family: Roboto, sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 1.55;
   letter-spacing: 0.03em;
   color: var(--primary-white-color);
+  background-color: rgba(33, 150, 243, 0.9);
+  border: none;
   padding: 63px 24px;
-  position: absolute;
-  top: 0%;
-  opacity: 0;
+  
+
+  opacity: 1;
+  transform: translateY(101%);
+  
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+              transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+  
 }
 
 .work-card {
@@ -605,6 +653,8 @@ img {
 }
 .work-link {
   display: inline-block;
+
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .work-link:hover,
@@ -613,13 +663,11 @@ img {
    0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
-.work-link:hover .work-img::before,
-.work-link:focus .work-img::before {
-  opacity: 1;
-}
+
 .work-link:hover .text-box,
 .work-link:focus .text-box {
   opacity: 1;
+  transform: translateY(0px)
 }
 .work .work-title {
   color: var(--title-text-color);
